@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: "Plus Jakarta Sans", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Floating card hover lift & soft luminous elevation */
+.bi-card {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  box-shadow: 0 2px 10px -3px rgba(15, 23, 42, 0.05), 0 1px 3px -1px rgba(15, 23, 42, 0.03);
+}
+
+.bi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px -12px rgba(37, 99, 235, 0.14), 0 8px 18px -6px rgba(15, 23, 42, 0.07);
+}
+
+.dark .bi-card {
+  box-shadow: 0 2px 12px -4px rgba(0, 0, 0, 0.45);
+}
+
+.dark .bi-card:hover {
+  box-shadow: 0 18px 36px -12px rgba(59, 130, 246, 0.2), 0 8px 16px -6px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.bi-float-gentle {
+  animation: gentle-float 5.2s ease-in-out infinite;
+}
+
+.bi-float-gentle:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle custom scrollbars for high-density ERP tables */
+.erp-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.erp-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.erp-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 3px;
+}
+
+.erp-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bi-card:hover {
+    transform: none;
+  }
+  .bi-float-gentle {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "NexusBI 经营财报数据决策平台",
+  "description": "面向跨境电商与互联网运营管理的多维BI数据看板平台，集成总监财报看板、订单与广告看板及主管经营看板。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

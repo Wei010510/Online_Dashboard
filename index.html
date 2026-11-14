@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>William's Online Dashboard</title>
+    <meta name="description" content="面向电商与运营管理的多维BI数据看板平台，支持总监财报看板、订单广告看板与主管经营看板。" />
+    <meta property="og:title" content="William's Online Dashboard" />
+    <meta property="og:description" content="面向电商与运营管理的多维BI数据看板平台，支持总监财报看板、订单广告看板与主管经营看板。" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#F4F7FB] text-slate-900 dark:bg-[#0B1120] dark:text-slate-100 antialiased selection:bg-blue-500/20">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if (window.location.protocol === 'file:' && document.querySelector('script[src="/src/main.tsx"]')) {
+        window.location.replace('./dist/index.html');
+      }
+    </script>
+  </body>
+</html>
